@@ -1,0 +1,42 @@
+{
+  "name": "webapi",
+  "version": "1.0.0",
+  "description": "This is my first assignment.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SabinaSunuwar/WebAPIFirstAssignment.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "sabina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SabinaSunuwar/WebAPIFirstAssignment/issues"
+  },
+  "homepage": "https://github.com/SabinaSunuwar/WebAPIFirstAssignment#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "eslint": "^6.7.2",
+    "express": "^4.17.1",
+    "jsdoc": "^3.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.0.2",
+    "nodemon": "^2.0.2",
+    "sequelize": "^5.21.3",
+    "sql": "^0.78.0",
+    "swagger": "^0.7.5",
+    "swagger-jsdoc": "^3.5.0",
+    "swagger-ui-express": "^4.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  }
+}
