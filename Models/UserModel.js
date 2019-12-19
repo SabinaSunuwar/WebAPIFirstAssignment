@@ -1,40 +1,31 @@
-var dbConfig = require('../dbConfig/dbConfig.js');
+const dbConfig = require('../dbConfig/dbConfig.js');
 
-//Create database table with attributes
-var user = dbConfig.sequelize.define('user',
-{
-    id:{
-        type:dbConfig.Sequelize.INTEGER,
-        primaryKey:true,
-        autoIncrement:true,
-        alloNull:false
+// Define sequelize model
+var users = dbConfig.sequelize.define('user', {
+    //Attributes
+    id: {
+        type: dbConfig.Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
     },
-    username:{
+    username: {
         type:dbConfig.Sequelize.TEXT,
-        alloNull:false
+        allowNull: false
     },
-    password:{
+    password: {
         type:dbConfig.Sequelize.TEXT,
-        alloNull:false
-    },
-    address:{
-        type:dbConfig.Sequelize.TEXT,
-        alloNull:false
-    }
-},
-{
-    paranoid:true,
-    freezetableName:true,
-    tableName:'user_table'
-}
-)
+        allowNull: false
+    }},{
+    freezeTableName:true,
+    tableName: 'user_table'});
+    
+    users.sync({force:false})
+    .then(function(result){
+        //console.log("table made successfully")
+    })
+    .catch(function(err){
+        console.log(err)
+    })
 
-user.sync({force:false})
-.then(function(result){
-    console.log(result)
-})
-.catch(function(err){
-    console.log(err)
-})
-
-module.exports = {user}
+module.exports = users
